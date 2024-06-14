@@ -14,7 +14,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
    <link rel="stylesheet" href="webpage.css">
-    <title>Web Page</title>
+    <title>Info Tech</title>
+    <link rel="icon" type="image/x-icon" href="newFavicon.png">
     
   </head>
   <body>
@@ -43,13 +44,17 @@
           <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header text-align-center">
+                  <h5 class="modal-title lead" id="editModalLabel ">Your Details</h5>
+                  <button type="button" class="btn-close text-primary fs-8" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <!-- Edit form -->
                   <form id="editForm" method="get">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name:</label>
+                      <input type="text" class="form-control" id="name" value="Abc">
+                    </div>
                     <div class="mb-3">
                       <label for="email" class="form-label">Email:</label>
                       <input type="email" class="form-control" id="email" value="xyz@gmail.com">
@@ -64,8 +69,16 @@
                     </div>
                     <div class="mb-3">
                       <label for="address" class="form-label">Address:</label>
-                      <textarea class="form-control" id="address" rows="3">Address...</textarea>
+                      <textarea class="form-control" id="address" rows="2">Address...</textarea>
                     </div>
+
+                    <div class="mb-3">
+                      <label for="profilePicture" class="form-label">Profile Picture :</label>
+                      <input class="form-control form-control-sm border-0" type="file" id="profilePicture" name="profilePicture">
+                    </div>
+
+
+                   
                     <!-- Add more fields as needed -->
                     <button type="submit" class="btn btn-primary">Save changes</button>
                   </form>

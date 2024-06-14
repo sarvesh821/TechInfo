@@ -74,3 +74,15 @@ body {
   float: right;
 }
 
+#editForm{
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+}
+#editForm input{
+  height: 24px;
+  margin-bottom: -4px;
+}
+#editForm input {
+  font-style: italic;
+  font-size: 12px;
+}

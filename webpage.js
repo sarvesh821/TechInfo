@@ -11,8 +11,6 @@ window.onload = function() {
       document.getElementById('I-lang').innerHTML=currentUser.language
       document.getElementById('I-profile').src=currentUser.profilePicture
 
-     
-      
     }
   };
 
@@ -21,25 +19,47 @@ window.onload = function() {
     window.location.href = "Login.html";
   });
 
+    document.getElementById("edit-button").addEventListener("click", function (event) {
+      event.preventDefault();
+      const storedProfile = JSON.parse(localStorage.getItem("currentUser"));
+      if (storedProfile) {
+        document.getElementById("name").value=`${storedProfile.firstName} ${storedProfile.lastName}`
+        document.getElementById("email").value = storedProfile.email;
+        document.getElementById("phone").value = storedProfile.phone;
+        document.getElementById("language").value = storedProfile.language;
+        
+      }
+    });
     document.getElementById('editForm').addEventListener('submit', function(event) {
       event.preventDefault();
      
-
-     
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+     const name=document.getElementById('name').value
+      const new_email = document.getElementById('email').value;
+      const new_phone = document.getElementById('phone').value;
       const language = document.getElementById('language').value;
       const address = document.getElementById('address').value;
+      const profile=document.querySelector("input[name='profilePicture']").files[0];
        console.log(email)
-
-      document.getElementById("I-email").innerText = email; 
-      document.getElementById("I-phone").innerText = phone; 
+       document.getElementById('userName').innerHTML=name
+      document.getElementById("I-email").innerText = new_email; 
+      document.getElementById("I-phone").innerText = new_phone; 
      
       document.getElementById('I-lang').innerHTML=language;
-      document.getElementById('I-lang').innerHTML=address;
       
-      
-      
+      const FL_name=name.split(' ')
+      const editUser={
+            username: currentUser.email,
+            password: currentUser.password,
+            firstName: FL_name[0],
+            lastName: FL_name[1],
+            dob: currentUser.dob,
+            phone:new_phone,
+            email: new_email,
+            
+            profilePicture:currentUser.profilePicture
+      }
+    
       const modalElement = document.getElementById('editModal');
       const modal = bootstrap.Modal.getInstance(modalElement);
       modal.hide();
