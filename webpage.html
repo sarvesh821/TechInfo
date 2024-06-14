@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+   <link rel="stylesheet" href="webpage.css">
+    <title>Web Page</title>
+    
+  </head>
+  <body>
+    <nav class="bg-secondary p-2 ">
+      <div class="navbar-left">
+        <h2 class="lead fs-4 text-warning">Info Tech</h2>
+        <a href="webpage.html"><button type="button" class="btn btn-secondary btn-sm lead text-dark">Home</button></a>
+        <a href="webpage.html"><button type="button" class="btn btn-secondary btn-sm lead text-dark">Page1</button></a>
+        <a href="webpage.html"><button type="button" class="btn btn-secondary btn-sm lead text-dark">Page2</button></a>
+      </div>
+      <div class="navbar-right">
+        <button type="button" class="btn btn-secondary btn-sm text-dark" id="login"><i class="fas fa-sign-in-alt"></i> Login</button>
+      <button type="button" class="btn btn-secondary btn-sm text-dark" id="signup"><i class="fas fa-user-plus"></i> Signup</button>
+      <button type="button" class="btn btn-secondary btn-sm text-dark" id="logout"> <i class="fas fa-sign-out-alt"></i>Logout</button>
+    </div>
+    </nav>
+    <div class="container-fluid my-2">
+      <div class="row justify-content-center">
+        <div class="col-3 border bg-white m-2 h-100">
+          <div id="edit-profile col-12 ">
+            <a href="#" id="edit-button"  data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit text-dark"></i></a>
+          </div>
+   
+        
+          
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Edit form -->
+                  <form id="editForm" method="get">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="email" value="xyz@gmail.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Phone:</label>
+                      <input type="text" class="form-control" id="phone" value="213....">
+                    </div>
+                    <div class="mb-3">
+                      <label for="language" class="form-label">Language:</label>
+                      <input type="text" class="form-control" id="language" value="English">
+                    </div>
+                    <div class="mb-3">
+                      <label for="address" class="form-label">Address:</label>
+                      <textarea class="form-control" id="address" rows="3">Address...</textarea>
+                    </div>
+                    <!-- Add more fields as needed -->
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div
+            class="container text-center border-bottom border-secondary py-3"
+          >
+            <img src="profile.jpg" alt="profile" height="120px" width="120px" id="I-profile" />
+            <h2 id="userName">Sarvesh Goyal</h2>
+            <span class="opacity-50">Programmer</span>
+          </div>
+          <div class="container middle my-4 border-bottom border-secondary">
+            <p><i class="fas fa-map-marker-alt"></i> <span id="I-address">Masjid Banda,Hyderabad</span></p>
+            <p ><i class="fas fa-phone"></i> <span id="I-phone">9463020652</span></p>
+            <p ><i class="fas fa-envelope"></i> <span id="I-email">sarvesh@beehyv.com</span></p>
+            <p>
+              <i class="fas fa-link"></i>
+              <a href="#" id="I-link">http://home.iitk.ac.in/~sarveshks</a>
+            </p>
+            <p><i class="fas fa-language"></i> <span id="I-lang">English</span></p>
+          </div>
+          <div class="container bottom my-4">
+            <p>
+              <a href="#"><i class="fab fa-twitter twitter-icon"></i></a>
+              <a href="#"><i class="fab fa-soundcloud soundcloud-icon"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-8 border bg-white my-2 py-6 small-font">
+          <div class="container col-12 mb-4 head">
+            <!-- <h2 class=" text-secondary lead fs-3 "> ABOUT</h2> -->
+            <h5 class="lead text-secondary mt-4">BACKGROUND</h5>
+            <hr />
+          </div>
+          <div class="col-12 mb-2 info">
+            <p>
+              <i class="fas fa-heart"></i>
+            </p>
+            <div class="container">
+              <!-- <h2 class=" text-secondary lead fs-3 "> ABOUT</h2> -->
+              <h5 class="lead text-secondary">ABOUT</h5>
+              <hr />
+              <p class="">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Debitis hic eius esse vitae animi obcaecati voluptatem
+                veritatis, odio reprehenderit, rerum libero? Dolorem dolor vero
+                inventore corrupti magni optio, veniam, numquam explicabo
+                repellendus excepturi nostrum quasi nobis provident delectus et
+                quaerat?
+              </p>
+            </div>
+          </div>
+          <div class="col-12 info mb-2">
+            <p><i class="fas fa-briefcase"></i></p>
+            <div class="container">
+              <h5 class="lead text-secondary">WORK EXPERIENCE</h5>
+              <hr />
+              <div class="experience-info">
+                <h5>Project 1, Java, Angular</h5>
+                <p><small>Dec, 2013 - Dec, 2014 · 1 year</small></p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua...
+                </p>
+                <ul>
+                  <li>Random point 1</li>
+                  <li>Random point 2</li>
+                  <li>Random point 3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-4 info skill">
+            <p><i class="fas fa-code"></i></p>
+            <div class="container">
+              <h5 class="lead text-secondary">SKILLS</h5>
+              <hr />
+              <div class="border-start border-5 border-success px-1 mb-2">
+                <h5>Web Development</h5>
+                <span class="badge bg-primary skill-badge">HTML</span>
+                <span class="badge bg-primary skill-badge">CSS</span>
+                <span class="badge bg-primary skill-badge">JavaScript</span>
+              </div>
+              <div
+                class="border-start border-5 border-success border-rounded px-1"
+              >
+                <h5>Compression</h5>
+                <span class="badge bg-primary skill-badge">Mpeg</span>
+                <span class="badge bg-primary skill-badge">MP4</span>
+                <span class="badge bg-primary skill-badge">GIF</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-2 info">
+            <p><i class="fas fa-graduation-cap"></i></p>
+            <div class="container">
+              <h5 class="lead text-secondary">EDUCATION</h5>
+              <hr />
+              <div class="education-info">
+                <h6>Bachelor of Technology, IIT Kanpur</h6>
+                <p><small>Jun, 2011 - Jan, 2014</small></p>
+                <p>CGPA: <span class="text-muted">Random</span></p>
+                <span class="badge bg-secondary skill-badge"
+                  >DB101 - Basic SQL</span
+                >
+                <span class="badge bg-secondary skill-badge"
+                  >CS2011 - Java Introduction</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 py-4 info">
+            <p><i class="fas fa-paw"></i></p>
+            <div class="container ">
+              <h5 class="lead text-secondary">INTEREST</h5>
+              <hr />
+              <div class="d-flex">
+                <div class="interests-info  col-11">
+                  <p>Wildlife</p>
+                  <p>Unicorns</p>
+                </div>
+                <div class="edit-img  d-flex  align-items-end ">
+                  <a href="#"><img src="BottomRightButton.png" alt="edit image" height="52px" width="52px"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+
+      window.onload = function() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  
+    if (!currentUser) {
+      window.location.href = "Login.html";
+    } else {
+      document.getElementById("userName").innerText = currentUser.firstName + " " + currentUser.lastName;
+      document.getElementById("I-email").innerText = currentUser.email; 
+      document.getElementById("I-phone").innerText = currentUser.phone; 
+      document.getElementById('I-link').innerHTML=`http://home.iitk.ac.in/~${currentUser.firstName}`
+      document.getElementById('I-lang').innerHTML=currentUser.language
+      document.getElementById('I-profile').src=currentUser.profilePicture
+
+     
+      
+    }
+  };
+
+  document.getElementById("logout").addEventListener("click", function() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "Login.html";
+  });
+
+    document.getElementById('editForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const language = document.getElementById('language').value;
+      const address = document.getElementById('address').value;
+       console.log(email)
+
+      document.getElementById("I-email").innerText = email; 
+      document.getElementById("I-phone").innerText = phone; 
+     
+      document.getElementById('I-lang').innerHTML=language;
+      document.getElementById('I-lang').innerHTML=address;
+      
+      
+      
+      var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+      editModal.hide();
+    });
+    
+    
+
+    </script>
+  </body>
+</html>
