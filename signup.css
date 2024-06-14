@@ -1,0 +1,32 @@
+body{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+}
+::placeholder {
+    font-style: italic;
+    font-size: 12px;
+}
+input.form-control-sm {
+    height: 20px; 
+    font-size: 12px;
+}
+label{
+    font-size: 12px;
+}
+.custom-button {
+    width: 70%;
+    margin: auto;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    height: 26px;
+  }
+  .custom-button button{
+    text-align: center;
+    font-size: 12px;
+  }
