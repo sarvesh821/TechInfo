@@ -33,6 +33,7 @@ document
       document.getElementById("email").value = storedProfile.email;
       document.getElementById("phone").value = storedProfile.phone;
       document.getElementById("language").value = storedProfile.language;
+      document.getElementById("address").value=document.getElementById('I-address').textContent
     }
   });
 document
@@ -51,12 +52,13 @@ document
     document.getElementById("userName").innerHTML = name;
     document.getElementById("I-email").innerText = new_email;
     document.getElementById("I-phone").innerText = new_phone;
-    document.getElementById("I-profile").src = URL.createObjectURL(profile);
+    
     document.getElementById("I-lang").innerHTML = language;
+    document.getElementById('I-address').innerHTML=address
 
     const FL_name = name.split(" ");
     const editUser = {
-      username: currentUser.email,
+      username: currentUser.username,
       password: currentUser.password,
       firstName: FL_name[0],
       lastName: FL_name[1],
@@ -65,7 +67,17 @@ document
       email: new_email,
       profilePicture: currentUser.profilePicture,
     };
-
+    console.log(editUser);
+    const userList = JSON.parse(localStorage.getItem('userList'));
+    const userIndex = userList.findIndex(user => user.username === editUser.username && user.password === editUser.password);
+    const user = userList.find(user => user.username === editUser.username && user.password === editUser.password);
+    if (user){
+     localStorage.setItem('currentUser',JSON.stringify(editUser))
+    }
+    if (userIndex!=-1){
+        userList[userIndex] = editUser;
+        localStorage.setItem('userList', JSON.stringify(userList));
+    }
     const modalElement = document.getElementById("editModal");
     const modal = bootstrap.Modal.getInstance(modalElement);
     modal.hide();
