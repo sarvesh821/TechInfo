@@ -4,6 +4,7 @@ window.onload = function () {
   if (!currentUser) {
     window.location.href = "Login.html";
   } else {
+    // document.getElementById('login').style.display=none
     document.getElementById("userName").innerText =
       currentUser.firstName + " " + currentUser.lastName;
     document.getElementById("I-email").innerText = currentUser.email;
@@ -33,7 +34,8 @@ document
       document.getElementById("email").value = storedProfile.email;
       document.getElementById("phone").value = storedProfile.phone;
       document.getElementById("language").value = storedProfile.language;
-      document.getElementById("address").value=document.getElementById('I-address').textContent
+      document.getElementById("address").value =
+        document.getElementById("I-address").textContent;
     }
   });
 document
@@ -52,34 +54,56 @@ document
     document.getElementById("userName").innerHTML = name;
     document.getElementById("I-email").innerText = new_email;
     document.getElementById("I-phone").innerText = new_phone;
-    
-    document.getElementById("I-lang").innerHTML = language;
-    document.getElementById('I-address').innerHTML=address
-    document.getElementById("I-profile").src=URL.createObjectURL(profile)
 
-    const FL_name = name.split(" ");
-    const editUser = {
-      username: currentUser.username,
-      password: currentUser.password,
-      firstName: FL_name[0],
-      lastName: FL_name[1],
-      dob: currentUser.dob,
-      phone: new_phone,
-      email: new_email,
-      profilePicture: currentUser.profilePicture,
-    };
-    console.log(editUser);
-    const userList = JSON.parse(localStorage.getItem('userList'));
-    const userIndex = userList.findIndex(user => user.username === editUser.username && user.password === editUser.password);
-    const user = userList.find(user => user.username === editUser.username && user.password === editUser.password);
-    if (user){
-     localStorage.setItem('currentUser',JSON.stringify(editUser))
+    document.getElementById("I-lang").innerHTML = language;
+    document.getElementById("I-address").innerHTML = address;
+    document.getElementById("I-profile").src = URL.createObjectURL(profile);
+
+    function getBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+        reader.readAsDataURL(file);
+      });
     }
-    if (userIndex!=-1){
-        userList[userIndex] = editUser;
-        localStorage.setItem('userList', JSON.stringify(userList));
-    }
-    const modalElement = document.getElementById("editModal");
-    const modal = bootstrap.Modal.getInstance(modalElement);
-    modal.hide();
+    getBase64(profile)
+      .then((base64String) => {
+        const FL_name = name.split(" ");
+        const editUser = {
+          username: currentUser.username,
+          password: currentUser.password,
+          firstName: FL_name[0],
+          lastName: FL_name[1],
+          dob: currentUser.dob,
+          phone: new_phone,
+          email: new_email,
+          profilePicture: base64String,
+        };
+        console.log(editUser);
+        const userList = JSON.parse(localStorage.getItem("userList"));
+        const userIndex = userList.findIndex(
+          (user) =>
+            user.username === editUser.username &&
+            user.password === editUser.password
+        );
+        const user = userList.find(
+          (user) =>
+            user.username === editUser.username &&
+            user.password === editUser.password
+        );
+        if (user) {
+          localStorage.setItem("currentUser", JSON.stringify(editUser));
+        }
+        if (userIndex != -1) {
+          userList[userIndex] = editUser;
+          localStorage.setItem("userList", JSON.stringify(userList));
+        }
+        const modalElement = document.getElementById("editModal");
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        modal.hide();
+      })
+      .catch((error) => {
+        console.error("Error converting profile picture to base64:", error);
+      });
   });

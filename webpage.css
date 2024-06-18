@@ -86,3 +86,10 @@ body {
   font-style: italic;
   font-size: 12px;
 }
+
+@media(max-width:650px){
+  #I-profile{
+    height: 90px;
+    width: 90px;
+  }
+}
