@@ -48,13 +48,14 @@ document
     const language = document.getElementById("language").value;
     const address = document.getElementById("address").value;
     const profile = document.querySelector("input[name='profile']").files[0];
-    console.log(email);
+    console.log(profile);
     document.getElementById("userName").innerHTML = name;
     document.getElementById("I-email").innerText = new_email;
     document.getElementById("I-phone").innerText = new_phone;
     
     document.getElementById("I-lang").innerHTML = language;
     document.getElementById('I-address').innerHTML=address
+    document.getElementById("I-profile").src=URL.createObjectURL(profile)
 
     const FL_name = name.split(" ");
     const editUser = {
